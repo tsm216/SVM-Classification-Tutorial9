@@ -12,7 +12,7 @@ from sklearn.metrics import (accuracy_score, classification_report,
                              confusion_matrix, ConfusionMatrixDisplay)
 
 RANDOM_STATE = 42
-CSV_PATH = "data.csv"          # Kaggle file name
+CSV_PATH = "ddata.csv"          # Kaggle file name
 os.makedirs("plots", exist_ok=True)
 
 
@@ -25,7 +25,7 @@ def load_data(path=CSV_PATH):
     try:  # optional automatic download
         import kagglehub
         folder = kagglehub.dataset_download("uciml/breast-cancer-wisconsin-data")
-        return pd.read_csv(os.path.join(folder, "data.csv"))
+        return pd.read_csv(os.path.join(folder, "ddata.csv"))
     except Exception as e:
         raise SystemExit(
             f"Could not find '{path}'.\n"
